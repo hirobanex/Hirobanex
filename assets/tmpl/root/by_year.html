@@ -1,0 +1,20 @@
+[% INCLUDE 'include/header.html' %]
+
+  <h1>[% h1 %]</h1>
+  <div class="archive">
+  <ul class="square">
+      [% FOR month IN month_list_per_year %]
+      <li>
+          <a href="/article/[% month.created_year %]/[% month.created_month %]/">
+              [% month.created_year %]年[% month.created_month %]月
+          </a>
+           ([% month.article_count %])
+      </li>
+      [% END %]
+  </ul>
+  </div>
+</div>
+
+[% INCLUDE 'include/sidebar/root.html' %]
+
+[% INCLUDE 'include/footer.html' %]

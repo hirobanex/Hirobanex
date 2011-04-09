@@ -1,0 +1,19 @@
+<div id="sidebar">
+<!--
+  <div class="sidebar_bloc">
+    <div class="sidebar_title">カテゴリの登録</div>
+    <form method="post" action="/manage/blog_category" enctype="multipart/form-data">
+      [% form_blog_category.render | html_unescape %]
+      <input type="submit" />
+    </form>
+  </div>
+-->
+  <div class="sidebar_bloc">
+    <div class="sidebar_title">管理</div>
+      <ul class="square">
+        <li><a href="/manage">管理トップ</a></li>
+        <li><a href="/manage/blog_page">記事一覧</a></li>
+        <li><a href="/manage/blog_category">カテゴリ一覧</a></li>
+      </ul>
+  </div>
+</div>

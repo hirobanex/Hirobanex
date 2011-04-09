@@ -1,0 +1,35 @@
+<div id="sidebar">
+  <div class="sidebar_bloc">
+    <div class="sidebar_title">Search</div>
+    [% INCLUDE 'include/tools/google_custom_engine.html' %]
+  </div>
+  <div class="sidebar_bloc">
+    <div class="sidebar_title">Categories</div>
+    <ul class="square">
+      [% FOR category = category_list %]
+        <li><a href="/category/[% category.tag | uri %]">[% category.tag %]</a> ([% category.article_count %])</li>
+      [% END %]
+    </ul>
+  </div>
+  <div class="sidebar_bloc">
+    <div class="sidebar_title">Archives By Month</div>
+    <ul class="square">
+      [% FOR month = month_list %]
+        <li>
+          <a href="/article/[% month.created_year %]/[% month.created_month %]/">
+            [% month.created_year %]年[% month.created_month %]月
+          </a> 
+          ([% month.article_count %])
+        </li>
+      [% END %]
+    </ul>
+  </div>
+  <div class="sidebar_bloc">
+    <div class="sidebar_title">Archives By Year</div>
+    <ul class="square">
+      [% FOR year = year_list %]
+        <li><a href="/article/[% year.created_year %]/">[% year.created_year %]年</a> ([% year.article_count %])</li>
+      [% END %]
+    </ul>
+  </div>
+</div>

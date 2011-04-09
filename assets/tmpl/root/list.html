@@ -1,0 +1,48 @@
+[% INCLUDE 'include/header.html' %]
+
+  <!-- リストページのパーツ -->
+  [% IF c.dispatch_rule.action != 'index' %]
+    <h1>[% h1 %]</h1><br />
+  [% END %]
+  [% FOR row = article_list %]
+    <div class="article_set">
+        <div class="article_sub_info">
+        <span class="category"><a href="/category/[% row.category_tag1 | url %]">[% row.category_tag1 %]</a></span>
+        [% IF row.category_tag2 %]
+          <span class="category"><a href="/category/[% row.category_tag2 | url %]">[% row.category_tag2 %]</a></span>
+        [% END %]
+        <span>[% row.created_date %]</span>
+        </div>
+        <div class="article_title">
+          <a href="[% row.permalink %]">[% row.title %]</a>
+        </div>
+        <div class="description">
+          [% row.description %]
+        </div>
+        <div class="article_link"><a href="[% row.permalink %]">『[% row.title %]』の続きを読む</a></div>
+    </div>
+  [% END %]
+
+  [% IF pager %]
+    <div class="pager">
+        [% IF pager.prev_page == 'first' %]
+            &nbsp;
+        [% ELSIF pager.prev_page == 'top' %]
+            <a href="[% c.req.env.PATH_INFO | url %]">前へ</a>&nbsp;
+        [% ELSE %]
+            <a href="[% c.req.env.PATH_INFO | url %]?page=[% pager.prev_page %]">前へ</a>&nbsp;
+        [% END %]
+        |
+        [% IF pager.next_page == 'last' %]
+            &nbsp;
+        [% ELSE %]
+            &nbsp;<a href="[% c.req.env.PATH_INFO | url %]?page=[% pager.next_page %]">次へ</a>
+        [% END %]
+    </div>
+  [% END %]
+  <!-- リストページのパーツ -->
+</div>
+
+[% INCLUDE 'include/sidebar/root.html' %]
+
+[% INCLUDE 'include/footer.html' %]

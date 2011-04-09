@@ -1,0 +1,39 @@
+[% INCLUDE 'include/header.html' %]
+<h1>カテゴリの管理</h1>
+<br />
+  <h2>カテゴリの登録</h2>
+<br />
+  [% IF form_blog_category.submitted == 1 %]
+    [% FOR message IN form_blog_category.get_error_messages %]
+      <p class="error">[% message %]</p>
+    [% END %]
+  [% END %]
+  <form method="post" action="/manage/blog_category/[%- blog_category_id -%]" enctype="multipart/form-data">
+    [% form_blog_category.render | html_unescape %]
+    <input type="submit" />
+  </form>
+<br />
+  [% IF list_blog_category %]
+    <h2>カテゴリ一覧</h2>
+<br />
+    <table>
+    <tr>
+        <th>カテゴリ名</th>
+        <th>記事数</th>
+        <th>作成日</th>
+        <th>変更日時</th>
+    </tr>
+    [% FOR category IN list_blog_category %]
+    <tr>
+        <td><a href="/manage/blog_category/[% category.id %]">[% category.tag %]</a></td>
+        <td>[% category.article_count %]</td>
+        <td>[% category.created_date %]</td>
+        <td>[% category.updated_at %]</td>
+    </tr>
+    [% END %]
+    </table>
+  [% END %]
+</div>
+[% INCLUDE 'include/sidebar/register.html' %]
+
+[% INCLUDE 'include/footer.html' %]

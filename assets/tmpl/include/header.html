@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>[% title %]</title>
+    [% IF robots -%]    
+      <meta name="robots" content="noindex,follow" />
+    [%- END %]
+    [% IF meta_description -%]    
+      <meta name="description" content="[% meta_description %]" />
+    [%- END %]
+    <meta name="copyright" content="hirobanex.net" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+    <link id="theme" rel="stylesheet" type="text/css" href="/css/style.css" title="theme" />
+    <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/prettify/prettify.js"></script>
+    <script type="text/javascript">
+      addEventListener('load', prettyPrint, false);
+    </script>
+    [% INCLUDE 'include/tools/google_analytics.html' | html_unescape %]
+  </head>
+  [% IF c.req.env.PATH_INFO == '/manage' %]
+    <body onLoad="_gaq.push(['_setVar','no_report']);">    
+  [% ELSE %]
+    <body>
+  [% END %]
+    <!-- top wrapper -->
+    <div id="topWrapper">
+      <div id="topBannerWrapper">
+        <div id="topBanner">
+          <div id="siteTitleWrapper">
+           <div id="siteTitle"><a href="/">[% c.conf.site_name %]</a></div>
+           <div id="siteCopy">― Web Technology and Life ―</div>
+          </div>
+<!--
+          <div id="hmenuWrapper">
+            <div id="hmenu">
+              <ul>
+                <li id="current" style="border:none">
+                  <a href="#" shape="rect">Home</a>
+                </li>
+                <li>
+                  <a href="#" shape="rect">Products</a>
+                </li>
+                <li>
+                  <a href="#" shape="rect">Services</a>
+                </li>
+                <li>
+                  <a href="#" shape="rect">News</a>
+                </li>
+                <li>
+                  <a href="#" shape="rect">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+    <!-- end top wrapper -->
+    <div id="wrapper">
+      <div id="container">
+        <!--  content -->
+        <div id="content">
+          <div style="margin-top:10px;">
+            <div id="main">
+

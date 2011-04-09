@@ -1,0 +1,57 @@
+[% INCLUDE 'include/header.html' %]
+
+  <h1>Heading 1 sample</h1>
+  <div class="article_sub_info"><span class="create_date">2010-11-30</span></div>
+  <div class="article">
+    <div class="description">
+      <p>あああああああああああああああLorem  adipiamet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+    </div>
+    <p>あああああああああああああああLorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Suspendisse lectus tortor, , orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+    <h2>Heading 2 sample</h2>
+      <p>Lorem <a href="http://example.com/">example.com</a>ipsum dolor sit amet, consectetuer entum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+      <ul class="square">
+        <li><a href="http://example.com/">example.com</a></li>
+        <li>fewa</li>
+        <li>vdzvsz</li>
+      </ul>
+      <pre class="prettyprint lang-perl">
+      #!/usr/bin/perl
+
+      use strict;
+      use warnings;
+
+      print "Hello World!";
+      </pre>
+      <p> Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+      <ul class="decimal">
+        <li>wwww</li>
+        <li>fewa</li>
+        <li>vdzvsz</li>
+      </ul>
+      <blockquote>
+      あああああああああああああああいいいいいいいいいいいい。
+      ううううううううううう。ええええええええええええ。
+      <cite>ざれごと</cite>
+      </blockquote>
+      <p> Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+      <h3>Heading 3 sample</h3>
+        <p> Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.</p>
+        <dl>
+            <dt>Perl</dt>
+                <dd>インタープリターのプログラミング言語</dd>
+            <dt>MySQL</dt>
+                <dd>メジャーなSQLサーバ</dd>
+        </dl>
+  </div>
+  <div class="article_sub_info">
+    <span class="category"><a href="/">Perl</a></span>
+    <span class="category"><a href="/">Linux</a></span>
+    <span class="update_at">2010-11-30 12:12:33</span>
+  </div>
+</div>
+
+
+
+[% INCLUDE 'include/sidebar/root.html' %]
+
+[% INCLUDE 'include/footer.html' %]

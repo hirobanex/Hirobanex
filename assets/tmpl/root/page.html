@@ -1,0 +1,26 @@
+[% INCLUDE 'include/header.html' %]
+
+  <h1>[% article.title %]</h1>
+  <div class="article_sub_info"><span class="create_date">[% article.created_date %]</span></div>
+  <div class="article">
+    <div class="description">[% article.description | html_unescape %]</div>
+    [% article.content | html_unescape %]
+  </div>
+  <div class="article_sub_info">
+    <span class="category"><a href="/category/[% article.category_tag1 | url %]">[% article.category_tag1 %]</a></span>
+    [% IF article.category_tag2 %]
+      <span class="category"><a href="/category/[% article.category_tag2 | url %]">[% article.category_tag2 %]</a></span>
+    [% END %]
+    <span class="update_at">update_at : [% article.updated_at %]</span>
+  </div>
+  <div id="disqus">
+    [% INCLUDE 'include/tools/zenbuck.html' | html_unescape %]
+    [% INCLUDE 'include/tools/disqus.html' | html_unescape %]
+  </div>
+</div>
+
+
+
+[% INCLUDE 'include/sidebar/root.html' %]
+
+[% INCLUDE 'include/footer.html' %]
