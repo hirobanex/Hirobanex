@@ -17,7 +17,7 @@
           <a href="[% row.permalink %]">[% row.title %]</a>
         </div>
         <div class="description">
-          [% row.description %]
+          [% row.description | html_unescape %]
         </div>
         <div class="article_link"><a href="[% row.permalink %]">『[% row.title %]』の続きを読む</a></div>
     </div>
