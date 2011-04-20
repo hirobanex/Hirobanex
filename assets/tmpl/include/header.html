@@ -19,7 +19,7 @@
     </script>
     [% INCLUDE 'include/tools/google_analytics.html' | html_unescape %]
   </head>
-  [% IF c.req.env.PATH_INFO == '/manage' %]
+  [% IF c.req.path_info == '/manage' %]
     <body onLoad="_gaq.push(['_setVar','no_report']);">    
   [% ELSE %]
     <body>

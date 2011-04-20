@@ -28,15 +28,15 @@
         [% IF pager.prev_page == 'first' %]
             &nbsp;
         [% ELSIF pager.prev_page == 'top' %]
-            <a href="[% c.req.env.PATH_INFO | url %]">前へ</a>&nbsp;
+            <a href="[% c.req.path_info | url %]">前へ</a>&nbsp;
         [% ELSE %]
-            <a href="[% c.req.env.PATH_INFO | url %]?page=[% pager.prev_page %]">前へ</a>&nbsp;
+            <a href="[% c.req.path_info | url %]?page=[% pager.prev_page %]">前へ</a>&nbsp;
         [% END %]
         |
         [% IF pager.next_page == 'last' %]
             &nbsp;
         [% ELSE %]
-            &nbsp;<a href="[% c.req.env.PATH_INFO | url %]?page=[% pager.next_page %]">次へ</a>
+            &nbsp;<a href="[% c.req.path_info | url %]?page=[% pager.next_page %]">次へ</a>
         [% END %]
     </div>
   [% END %]
