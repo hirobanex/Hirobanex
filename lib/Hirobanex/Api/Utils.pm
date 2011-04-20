@@ -14,14 +14,5 @@ sub uri_decode {
     decode('utf8',uri_unescape($str));
 }
 
-
-sub html_escape_custom {
-    my ($self,$html) = @_;
-
-    my $scraper = scraper{};
-
-
-}
-
 1;
 

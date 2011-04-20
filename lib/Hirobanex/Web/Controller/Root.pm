@@ -8,7 +8,7 @@ __PACKAGE__->add_trigger(
         my ($class, $c) = @_;
 
         if($c->req->param('page') && $c->req->param('page') == 1){
-            $c->redirect($c->req->{env}->{PATH_INFO});
+            $c->redirect($c->req->path_info);
             $c->detach;
         }
 
