@@ -13,8 +13,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
     <link id="theme" rel="stylesheet" type="text/css" href="/css/style.css" title="theme" />
     <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/prettify/prettify.js"></script>
     <script type="text/javascript">
+      $('.sidebar_bloc_rss a img').hover(
+        function () {
+            $(this).replaceWith('<img src="/images/rss_hover.jpg" alt="rss" />');
+        }
+      );    
       addEventListener('load', prettyPrint, false);
     </script>
     [% INCLUDE 'include/tools/google_analytics.html' | html_unescape %]

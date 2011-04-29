@@ -105,6 +105,9 @@ a:hover {
 	text-decoration:none;
 }
 
+img {
+    border: none;
+}
 
 select {
     width:200px;
@@ -409,9 +412,25 @@ table.left td {
 }
 
 .sidebar_bloc {
- margin-top:10px;
+    margin-top:10px;
 	padding:15px;
 	background-color:#EEEEEE;
+}
+
+.sidebar_bloc_rss {
+    padding:10px 55px;
+    text-align:center;
+}
+.sidebar_bloc_rss a {
+    display: block;
+    background:url('/images/rss.jpg') no-repeat  0px 20px;
+    height:140px;
+    width:120px;
+}
+.sidebar_bloc_rss a:hover {
+    background:url('/images/rss_hover.jpg') no-repeat 0px 20px;
+    height:140px;
+    width:120px;
 }
 
 #sidebar a:link, #sidebar a:visited {
