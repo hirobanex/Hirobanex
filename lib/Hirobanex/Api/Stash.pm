@@ -13,6 +13,8 @@ sub fetch_article {
 
     my $row = api('BlogPage')->fetch_single($where);
 
+    return unless $row;
+
     return +{
         id            => $row->id,
         title         => $row->title,
