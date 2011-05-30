@@ -7,6 +7,7 @@ use DateTime::Format::Strptime;
 use DateTime::Format::MySQL;
 use DateTime::Format::Mail; 
 use DateTime::Format::W3CDTF;
+use DateTime::Format::HTTP;
 
 sub new { bless {}, +shift }
 
@@ -28,6 +29,12 @@ sub covert_rfc822_format {
     my ($self,$datetime) = @_;
 
     DateTime::Format::Mail->format_datetime($datetime);
+}
+
+sub covert_rfc1123_format {
+    my ($self,$datetime) = @_;
+
+    DateTime::Format::HTTP->format_datetime($datetime);
 }
 
 sub strptime {

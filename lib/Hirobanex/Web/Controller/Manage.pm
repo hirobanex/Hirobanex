@@ -14,8 +14,7 @@ __PACKAGE__->add_trigger(
 sub do_index {
     my ($class, $c, $args) = @_;
 
-    $c->stash->{form_blog_category} = api('Form')->get_form('blog_category',$c->req);
-    $c->stash->{form_blog_page}     = api('Form')->get_form('blog_page',    $c->req);
+
 }
 
 #do_blog_pageとインターフェース同じにする

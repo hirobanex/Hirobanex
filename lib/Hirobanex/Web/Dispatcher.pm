@@ -5,6 +5,10 @@ on '/' => run {
     'Root', 'index', FALSE, +{};
 };
 
+on '/search' => run {
+    'Root', 'search', FALSE, +{};
+};
+
 on '/sitemap.xml' => run {
     'Root', 'sitemap', FALSE, +{};
 };

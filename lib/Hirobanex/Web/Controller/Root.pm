@@ -18,6 +18,20 @@ __PACKAGE__->add_trigger(
     },
 );
 
+__PACKAGE__->add_trigger(
+    'after_dispatch' => sub{
+        my ($class, $c) = @_;
+
+        $c->add_filter(sub {
+            my ($context,$res) = @_;
+
+            my $expires_time = api('DateTime')->now->add( hours => 2 );
+            $res->header( 'Expires' => api('DateTime')->covert_rfc1123_format($expires_time) );
+            $res;
+        });
+    },
+);
+
 sub do_index {
     my ($class, $c) = @_;
 
@@ -156,6 +170,11 @@ sub do_sitemap {
         $res;
     });
     $c->load_template('sitemap.xml');
+}
+
+sub do_search {
+    my ($class, $c) = @_;
+
 }
 1;
 

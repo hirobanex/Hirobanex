@@ -33,7 +33,6 @@ body {
 	text-transform: normal;
 }
 
-
 h1 {
  padding:0 0 0 2px;
 	color:#000000;
@@ -72,6 +71,7 @@ table th {
     line-height: 120%;
     text-align: center;
 }
+
 table td {
     padding: 3px;
     border: 1px #E3E3E3 solid;
@@ -173,7 +173,6 @@ body {
 	font-family:Arial,sans-serif;
 	clear:both;
 }
-
 /* hmenu's
 
 #hmenuWrapper {
@@ -238,7 +237,6 @@ body {
 }
 */
 
-
 #container {
 	margin:0 auto;
 	width:1200px;
@@ -275,7 +273,6 @@ body {
 .article_set_sub_info span{
  padding:0 20px;
 }
-
 
 .article_set{
  background-color: #F5F5F5;
@@ -527,7 +524,6 @@ table.left td {
  text-align:right;
 	height:20px;
 }
-
 
 a img {
 	border:none;
