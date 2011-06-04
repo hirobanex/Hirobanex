@@ -175,6 +175,7 @@ sub do_sitemap {
 sub do_search {
     my ($class, $c) = @_;
 
+    $c->stash->{robots} = 1;
 }
 1;
 
