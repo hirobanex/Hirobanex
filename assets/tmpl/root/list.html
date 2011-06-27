@@ -12,9 +12,9 @@
           <span class="category"><a href="/category/[% row.category_tag2 | url %]">[% row.category_tag2 %]</a></span>
         [% END %]
         <span id="hatebu_count.[% row.permalink %]"></span>
-        <script type="text/javascript">hatebuCount('hatebu_count.[% row.permalink %]','http://[% c.conf.site_name %][% row.permalink %]');</script>
+        <script type="text/javascript">hatebuCount('hatebu_count.[% row.permalink %]','[% c.conf.site_url %][% row.permalink %]');</script>
         <span id="tweet_count.[% row.permalink %]"></span>
-        <script type="text/javascript">tweetCount('tweet_count.[% row.permalink %]','http://[% c.conf.site_name %][% row.permalink %]');</script>
+        <script type="text/javascript">tweetCount('tweet_count.[% row.permalink %]','[% c.conf.site_url %][% row.permalink %]');</script>
         <span>[% row.created_date %]</span>
         </div>
         <div class="article_title">

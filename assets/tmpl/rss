@@ -2,7 +2,7 @@
 <rss version="2.0">
   <channel>
     <title>[% c.conf.site_name %]</title>
-    <link>[% c.conf.site_url %]</link>
+    <link>[% c.conf.site_url %]/</link>
     <description>[%- c.conf.site_description -%]</description>
     <language>ja</language>
     [%- FOR row IN article_list %]

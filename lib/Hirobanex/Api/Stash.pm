@@ -24,7 +24,7 @@ sub fetch_article {
         category_tag2 => $row->category_tag2,
         created_date  => $row->created_at->ymd,
         updated_at    => $row->updated_at,
-        url           => container('conf')->{site_url}.'article/'.$row->created_year.'/'.$row->created_month.'/'.$row->id
+        url           => container('conf')->{site_url}.'/article/'.$row->created_year.'/'.$row->created_month.'/'.$row->id
     };
 }
 
@@ -105,7 +105,7 @@ sub fetch_list_sitemap {
     my @articles = map {
         {
             lastmod     => api('DateTime')->covert_w3c_format($_->updated_at),
-            permalink   => container('conf')->{site_url}.'article/'.$_->created_year.'/'.$_->created_month.'/'.$_->id,
+            permalink   => container('conf')->{site_url}.'/article/'.$_->created_year.'/'.$_->created_month.'/'.$_->id,
         }
     } container('db')->search('blog_page',{},{
         select => [qw/
@@ -121,11 +121,11 @@ sub fetch_list_sitemap {
     my @categorys = map {
         {
             lastmod   => api('DateTime')->covert_w3c_format($_->{updated_at}),
-            permalink => container('conf')->{site_url}.'category/'.uri_escape_utf8($_->{tag}),
+            permalink => container('conf')->{site_url}.'/category/'.uri_escape_utf8($_->{tag}),
         }
     } @{$self->fetch_categorys_has_article};
 
-    my $path = container('conf')->{site_url}.'article/';
+    my $path = container('conf')->{site_url}.'/article/';
 
     [
         @categorys,
@@ -156,7 +156,7 @@ sub fetch_list_rss {
             title       => $row->title,
             description => $row->description,
             pubDate     => api('DateTime')->covert_rfc822_format($row->created_at),
-            permalink   => container('conf')->{site_url}.'article/'.$row->created_year.'/'.$row->created_month.'/'.$row->id,
+            permalink   => container('conf')->{site_url}.'/article/'.$row->created_year.'/'.$row->created_month.'/'.$row->id,
         }
     } api('BlogPage')->fetch_list(limit => 20)->all];
 }

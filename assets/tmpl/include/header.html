@@ -10,6 +10,9 @@
       <meta name="description" content="[% meta_description %]" />
     [%- END %]
     <meta name="copyright" content="hirobanex.net" />
+    [% IF c.req.path_info == '/' %]
+    <link rel="canonical" href="[% c.conf.site_url %]/" />
+    [%- END %]
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
     <link id="theme" rel="stylesheet" type="text/css" href="/css/style.css" title="theme" />
     <script type="text/javascript" src="/js/common.js"></script>

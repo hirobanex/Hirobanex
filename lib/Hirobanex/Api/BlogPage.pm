@@ -86,7 +86,7 @@ sub register {
         api('BlogBy')->register_or_modify('blog_by_month',{ created_year => $row->created_year, created_month => $row->created_month });
         api('BlogBy')->register_or_modify('blog_by_year', { created_year => $row->created_year                                       });
         
-        my $url = container('conf')->{site_url}.'article/'.$row->created_year.'/'.$row->created_month.'/'.$row->id;
+        my $url = container('conf')->{site_url}.'/article/'.$row->created_year.'/'.$row->created_month.'/'.$row->id;
 
 
         if($tweet){
