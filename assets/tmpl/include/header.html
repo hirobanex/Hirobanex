@@ -12,8 +12,7 @@
     <meta name="copyright" content="hirobanex.net" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
     <link id="theme" rel="stylesheet" type="text/css" href="/css/style.css" title="theme" />
-    <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="/js/prettify/prettify.js"></script>
+    [% INCLUDE 'include/tools/google-code-prettify.html' | html_unescape %]
     [% INCLUDE 'include/tools/google_analytics.html' | html_unescape %]
   </head>
   [% IF c.req.path_info == '/manage' %]
