@@ -19,13 +19,19 @@
     <table>
     <tr>
         <th>タイトル</th>
+        <th>Tweet</th>
+        <th>hatebu</th>
         <th>カテゴリ</th>
         <th>作成日</th>
         <th>変更日時</th>
     </tr>
     [% FOR row IN list_blog_page %]
     <tr>
-        <td><a href="/manage/blog_page/[% row.id %]">[% row.title %]</a></td>
+        <td class="left"><a href="/manage/blog_page/[% row.id %]">[% row.title %]</a></td>
+        <td><span id="tweet_count.[% row.permalink %]"></span></td>
+        <script type="text/javascript">tweetCount('tweet_count.[% row.permalink %]','http://[% c.conf.site_name %][% row.permalink %]');</script>
+        <td><span id="hatebu_count.[% row.permalink %]"></span></td>
+        <script type="text/javascript">hatebuCount('hatebu_count.[% row.permalink %]','http://[% c.conf.site_name %][% row.permalink %]');</script>
         <td>[% row.category_tag1 %] [% row.category_tag2 %]</td>
         <td>[% row.created_date %]</td>
         <td>[% row.updated_at %]</td>
