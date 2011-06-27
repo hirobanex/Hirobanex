@@ -45,6 +45,7 @@ sub do_index {
     $c->stash->{title}            = container('conf')->{site_name};
     $c->stash->{meta_description} = container('conf')->{site_description};
     $c->stash->{article_list}     = $article_list;
+    $c->stash->{pager}            = $pager;
 
     $c->load_template('root/list.html');
 }
