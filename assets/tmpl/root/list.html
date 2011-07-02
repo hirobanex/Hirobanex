@@ -1,6 +1,5 @@
-[% INCLUDE 'include/header.html' %]
+[% INCLUDE 'include/header.html'  main_tmpl = 'list' %]
 
-  <!-- リストページのパーツ -->
   [% IF c.dispatch_rule.action != 'index' %]
     <h1>[% h1 %]</h1><br />
   [% END %]
@@ -11,10 +10,8 @@
         [% IF row.category_tag2 %]
           <span class="category"><a href="/category/[% row.category_tag2 | url %]">[% row.category_tag2 %]</a></span>
         [% END %]
-        <span id="hatebu_count.[% row.permalink %]"></span>
-        <script type="text/javascript">hatebuCount('hatebu_count.[% row.permalink %]','[% c.conf.site_url %][% row.permalink %]');</script>
-        <span id="tweet_count.[% row.permalink %]"></span>
-        <script type="text/javascript">tweetCount('tweet_count.[% row.permalink %]','[% c.conf.site_url %][% row.permalink %]');</script>
+        <span id="hatebuCount[% loop.count %]"></span>
+        <span id="tweetCount[% loop.count %]"></span>
         <span>[% row.created_date %]</span>
         </div>
         <div class="article_title">

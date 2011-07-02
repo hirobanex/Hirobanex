@@ -1,0 +1,55 @@
+<script type="text/javascript">
+/* はてなブックマーク数のカウント用スクリプト  */
+var hatebuCount = function (_id, _url) {
+    if(!_id)    return;
+    var pageURL = (_url) ? _url : document.URL;
+    //JSONの読み込み
+    $.ajax({
+        type: 'GET',
+        url: 'http://b.hatena.ne.jp/entry/jsonlite/',
+        data: 'url=' + pageURL,
+        dataType: 'jsonp',
+        success: function(data) {
+            //読み込み結果
+            var count = (data) ? data.count : 0; //ブックマーク数が0のときは数を0に
+
+            count = (document.URL.match(/manage/i)) ? count : 'B!: ' +  count;
+
+            $('#' + _id).text(count);
+        }
+    });
+}
+/* ツイート数のカウント用スクリプト */
+var tweetCount = function (_id, _url) {
+    if(!_id)    return;
+    var pageURL = (_url) ? _url : document.URL;
+    //JSONの読み込み
+    $.ajax({
+        type: 'GET',
+        url: 'http://urls.api.twitter.com/1/urls/count.json',
+        data: 'url=' + pageURL,
+        dataType: 'jsonp',
+        success: function(data) {
+            //読み込み結果
+            var count = (document.URL.match(/manage/i)) ? data.count : 'Tweet: ' + data.count;
+
+            $('#' + _id).text(count);
+        }
+    });
+}
+
+[% IF main_tmpl == 'page' %]
+    $(function () {
+        hatebuCount('hatebuCount');
+        tweetCount('tweetCount');
+    });
+[% ELSIF main_tmpl == 'list' %]
+    $(function () {
+    [% FOR row = article_list %]
+        hatebuCount('hatebuCount[% loop.count %]','[% c.conf.site_url %][% row.permalink %]');
+        tweetCount('tweetCount[% loop.count %]','[% c.conf.site_url %][% row.permalink %]');
+    [% END %]
+    });
+[% END %]
+</script>
+
