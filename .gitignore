@@ -1,5 +1,7 @@
 config_local.pl
 assets/log
-assets/daemontools
 assets/todo
 assets/original_site_template
+assets/daemontools/log/main
+assets/daemontools/log/supervise
+assets/daemontools/supervise

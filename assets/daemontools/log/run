@@ -1,0 +1,2 @@
+#! /bin/sh
+exec multilog t e 2>&1 ./main
