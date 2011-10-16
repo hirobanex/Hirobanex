@@ -7,4 +7,4 @@ export USER
 
 exec 2>&1
 cd /home/hirobanex/project/Hirobanex
-exec setuidgid hirobanex envuidgid hirobanex /home/hirobanex/perl5/perlbrew/perls/current/bin/start_server --port=5000 --interval=5 -- /home/hirobanex/perl5/perlbrew/perls/current/bin/plackup -E staging -s Starlet -o 127.0.0.1 --workers=15 --preload-app --max-requests=1000 --disable-keepalive=1 ./assets/script/hirobanex.psgi
+exec setuidgid hirobanex envuidgid hirobanex /home/hirobanex/perl5/perlbrew/perls/current/bin/start_server --port=127.0.0.1:5000 --interval=5 -- /home/hirobanex/perl5/perlbrew/perls/current/bin/plackup -E staging -s Starlet --max_workers=4 --max-reqs-per-child=50 --max-keepalive-reqs=1 ./assets/script/hirobanex.psgi
