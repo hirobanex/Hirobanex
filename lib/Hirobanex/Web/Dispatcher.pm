@@ -34,7 +34,7 @@ on '/article/(\d{4})/(\d{2})/(.+)' => run {
 };
 
 on '/manage' => run {
-    'Manage', 'index', TRUE, +{};
+    'Manage', 'index', FALSE, +{};
 };
 
 on '/manage/set_cookie' => run {
