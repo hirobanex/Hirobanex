@@ -1,2 +1,6 @@
 #! /bin/sh
-exec multilog t e 2>&1 ./main
+exec 2>&1
+exec setuidgid hirobanex multilog t ./main
+#exec   multilog t e 2>&1 ./main
+
+#exec setuidgid hirobanex  multilog t e 2>&1 ./main

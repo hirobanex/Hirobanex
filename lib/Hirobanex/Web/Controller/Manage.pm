@@ -11,11 +11,7 @@ __PACKAGE__->add_trigger(
     },
 );
 
-sub do_index {
-    my ($class, $c, $args) = @_;
-
-
-}
+sub do_index {}
 
 #do_blog_pageとインターフェース同じにする
 #一覧の閲覧ページは別で用意する
