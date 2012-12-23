@@ -263,13 +263,13 @@ body {
 .widget {
  border: 2px;
  border-style: solid;
- border-color: #F5F5F5;
- margin:30px 0px;
+ border-color: #EEEEEE;
+ margin:40px 0px;
  padding:0px;
 }
 
 .widget_title {
- background-color:#F5F5F5;
+ background-color:#EEEEEE;
  font-size:18px;
  color:#000000;
  font-weight:bold;
