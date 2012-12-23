@@ -8,6 +8,7 @@
   <div class="article">
     <div class="description">[% article.description | html_unescape %]</div>
     [% article.content | html_unescape %]
+    <!-- これは、"article_sub_info"に、いれたいけど、なんか、上にスペースができちゃう  -->
     <div class="social_share_button">
         [% INCLUDE 'include/tools/social_feed_back_page.html' | html_unescape %]
     </div>
