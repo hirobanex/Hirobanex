@@ -20,6 +20,9 @@
     [% END %]
     <span class="update_at">update_at : [% article.updated_at %]</span>
   </div>
+  <div class="widget">
+    [% INCLUDE 'include/tools/site_relation.html' | html_unescape %]
+  </div>
   <div id="disqus">
     [% INCLUDE 'include/tools/zenbuck.html' | html_unescape %]
     [% INCLUDE 'include/tools/disqus.html' | html_unescape %]
