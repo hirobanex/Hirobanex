@@ -8,6 +8,9 @@
   <div class="article">
     <div class="description">[% article.description | html_unescape %]</div>
     [% article.content | html_unescape %]
+    <div class="social_share_button">
+        [% INCLUDE 'include/tools/social_feed_back_page.html' | html_unescape %]
+    </div>
   </div>
   <div class="article_sub_info">
     <span class="category"><a href="/category/[% article.category_tag1 | url %]">[% article.category_tag1 %]</a></span>
