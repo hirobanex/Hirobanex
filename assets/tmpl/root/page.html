@@ -20,11 +20,11 @@
     [% END %]
     <span class="update_at">update_at : [% article.updated_at %]</span>
   </div>
-  <div class="ad_article_footer">
-    [% INCLUDE 'include/tools/ad/article_footer.html' | html_unescape %]
-  </div>
   <div class="widget">
     [% INCLUDE 'include/tools/site_relation.html' | html_unescape %]
+  </div>
+  <div class="ad_article_footer">
+    [% INCLUDE 'include/tools/ad/article_footer.html' | html_unescape %]
   </div>
   <div id="disqus">
     [% INCLUDE 'include/tools/zenbuck.html' | html_unescape %]

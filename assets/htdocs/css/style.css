@@ -264,7 +264,7 @@ body {
  border: 2px;
  border-style: solid;
  border-color: #EEEEEE;
- margin:40px 0px;
+ margin:25px 0px;
  padding:0px;
 }
 
@@ -290,12 +290,21 @@ body {
 /* ad  */
 /* ---------------------------------------------------------- */
 .ad_sidebar {
+ width:300px;
+ margin: 0 auto ;
+ border: solid 1px black;
 }
 
 .ad_article_footer {
+ width:336px;
+ margin: 3px auto;
+ border: solid 1px black;
 }
 
 .ad_list_footer {
+ width: 728px;
+ margin: 3px auto;
+ border: solid 1px black;
 }
 
 /* ---------------------------------------------------------- */
