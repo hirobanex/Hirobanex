@@ -289,9 +289,9 @@ body {
 /* ---------------------------------------------------------- */
 
 #main {
-	width:900px;
+	width:880px;
 	float:left;
-	margin-right:40px ;
+	margin-right:10px ;
 }
 
 .article_sub_info {
@@ -425,7 +425,7 @@ table.left td {
 
 #sidebar {
 	float:left;
-	width:260px;
+	width:310px;
 }
 
 #sidebar ul{
