@@ -2,6 +2,9 @@ use Kamui;
 use Hirobanex::Container;
 use Path::Class;
 use HTML::Entities qw//;
+use HTML::Scrubber;
+
+my $tag_remover = HTML::Scrubber->new( allow => [ qw[] ] );
 
 return +{
     view => {
@@ -10,6 +13,9 @@ return +{
             filters => +{
                 html_unescape => sub {
                     HTML::Entities::decode_entities(shift);
+                },
+                remove_tag  => sub {
+                    $tag_remover->scrub(+shift);
                 },
             },
         },

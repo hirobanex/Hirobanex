@@ -4,5 +4,5 @@
 <meta property="og:url" content="[% c.conf.site_url %][% row.permalink %]" />
 <!--<meta property="og:image" content="" />-->
 <meta property="og:site_name" content="[% c.conf.site_name %]" />
-<meta property="og:description" content="[% meta_description || article.description %]" />
+<meta property="og:description" content="[% (meta_description || article.description) | html_unescape | remove_tag %]" />
 
