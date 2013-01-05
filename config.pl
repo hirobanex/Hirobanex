@@ -24,6 +24,7 @@ return +{
     site_name         => 'your site name title',
     site_url          => 'http://example.com',
     site_description  => 'your site description',
+    facebook_app_id   => 'your facebook app_id',
 
     users => +{
         user_id => 'your passwd',
