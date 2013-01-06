@@ -56,7 +56,7 @@ h2 {
 }
 
 table {
-    width:900px;
+    width:880px;
     border: 1px #E3E3E3 solid;
     border-collapse: collapse;
     border-spacing: 0;
@@ -373,15 +373,7 @@ body {
 	clear:both;
 }
 .article ul{
- 	list-style:none inside none;
-  margin:0px;
-  padding:0;
-}
-.article ul.square li{
   list-style-type:square;
-}
-.article ul.decimal li{
-  list-style-type:decimal;
 }
 
 .article dt{
