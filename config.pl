@@ -2,6 +2,7 @@ use Kamui;
 use Hirobanex::Container;
 use Path::Class;
 use HTML::Entities qw//;
+use URI::Escape qw//;
 use HTML::Scrubber;
 
 my $tag_remover = HTML::Scrubber->new( allow => [ qw[] ] );
@@ -13,6 +14,9 @@ return +{
             filters => +{
                 html_unescape => sub {
                     HTML::Entities::decode_entities(shift);
+                },
+                uri_escape => sub {
+                    URI::Escape::uri_escape(shift);
                 },
                 remove_tag  => sub {
                     $tag_remover->scrub(+shift);
