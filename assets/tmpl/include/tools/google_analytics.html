@@ -1,6 +1,8 @@
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
+var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; //拡張リンクのアトリビューション分析用
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);//拡張リンクのアトリビューション分析用
 _gaq.push(['_setAccount', 'UA-22328437-1']);
 _gaq.push(['_trackPageview']);
 
@@ -10,4 +12,23 @@ _gaq.push(['_trackPageview']);
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
+</script>
+
+<script type="text/javascript">
+/* Google検索からのトラフィックがあったキーワードの順位を計測する方法  */
+if (document.referrer.match(/google\.(com|co\.jp)/gi) && document.referrer.match(/cd/gi)) {
+  var myString = document.referrer;
+  var r        = myString.match(/cd=(.*?)&/);
+  var rank     = parseInt(r[1]);
+  var kw       = myString.match(/q=(.*?)&/);
+  
+  if (kw[1].length > 0) {
+    var keyWord  = decodeURI(kw[1]);
+  } else {
+    keyWord = "(not provided)";
+  }
+
+  var p        = document.location.pathname;
+  _gaq.push(['_trackEvent', 'RankTracker', keyWord, p, rank, true]);
+}
 </script>
