@@ -46,7 +46,7 @@ return +{
     },
 
     twitter_source => {
-        traits              => [qw/API::REST OAuth/],
+        traits              => [qw/API::RESTv1_1 OAuth/],
         consumer_key        => 'yours',
         consumer_secret     => 'yours',
         access_token        => 'yours',
